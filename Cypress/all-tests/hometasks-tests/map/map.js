@@ -9,53 +9,53 @@ let planets = [
     {planet: "Neptune", radius: 24764, density: 1.64, distance: 30.07}
 ]
 
-         it('Maps', () => {
+it('Maps', () => {
 
-             let planetsMap = new Map();
-             planets.forEach(pl => planetsMap.set(pl.planet, {
-                 radius: pl.radius,
-                 density: pl.density,
-                 distance: pl.distance
-             }))
+    let planetsMap = new Map();
+    planets.forEach(pl => planetsMap.set(pl.planet, {
+        radius: pl.radius,
+        density: pl.density,
+        distance: pl.distance
+    }))
 
-             let printPlanetMap = (planets) => {
-                 planets.forEach((value, key) => {
-                     cy.log(key + ': ' + Object.keys(value).map(objKey => objKey + ':' + value[objKey]).join(', '))
-                 })
-             }
+    let printPlanetMap = (planets) => {
+        planets.forEach((value, key) => {
+            cy.log(key + ': ' + Object.keys(value).map(objKey => objKey + ':' + value[objKey]).join(', '))
+        })
+    }
 
-             cy.log(planetsMap.get('Saturn'))
-             cy.log(planetsMap.size)
+    cy.log(planetsMap.get('Saturn'))
+    cy.log(planetsMap.size)
 
-             let set = new Set();
-             set.add('Mercury')
-             set.add('Not Mercury')
+    let set = new Set();
+    set.add('Mercury')
+    set.add('Not Mercury')
 
-             set.forEach((planet) => {
-                 cy.log(planet + ': ' + planetsMap.has(planet))
-             })
+    set.forEach((planet) => {
+        cy.log(planet + ': ' + planetsMap.has(planet))
+    })
 
-             planetsMap.delete('Uranus')
-             printPlanetMap(planetsMap)
+    planetsMap.delete('Uranus')
+    printPlanetMap(planetsMap)
 
-             let somePlanetsMap = new Map()
-             somePlanetsMap.set("Q-78", {radius: 60456, density: 7.24, distance: 15.214})
-             somePlanetsMap.set("W-54", {radius: 55255, density: 15.44, distance: 25.121})
-             somePlanetsMap.set("E-82", {radius: 21355, density: 53.54, distance: 54.122})
-             somePlanetsMap.set("R-65", {radius: 65456, density: 43.21, distance: 65.656})
+    let somePlanetsMap = new Map()
+    somePlanetsMap.set("Q-78", {radius: 60456, density: 7.24, distance: 15.214})
+    somePlanetsMap.set("W-54", {radius: 55255, density: 15.44, distance: 25.121})
+    somePlanetsMap.set("E-82", {radius: 21355, density: 53.54, distance: 54.122})
+    somePlanetsMap.set("R-65", {radius: 65456, density: 43.21, distance: 65.656})
 
-             let mergedMaps = new Map([...planetsMap, ...somePlanetsMap])
-                 cy.log("merged")
-                 printPlanetMap(mergedMaps)
-         })
+    let mergedMaps = new Map([...planetsMap, ...somePlanetsMap])
+    cy.log("merged")
+    printPlanetMap(mergedMaps)
+})
 
-         it('Object', () => {
-             planets.forEach(planet => {
-                 for (let key in planet){
-                     cy.log(key + ': ' +planet[key])//как сделать вывод в одну строку??
-                 }
-             })
-         })
+it('Object', () => {
+    planets.forEach(planet => {
+        for (let key in planet) {
+            cy.log(key + ': ' + planet[key])//как сделать вывод в одну строку??
+        }
+    })
+})
 
 
 

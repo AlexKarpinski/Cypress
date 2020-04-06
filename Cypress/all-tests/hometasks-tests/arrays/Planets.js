@@ -10,54 +10,54 @@ let planets = [
 ]
 
 
-           it('Arrays', () => {
-               let printPlanets = (planets) => {
-                   planets.forEach(planet => {
-                       cy.log(JSON.stringify(planet));
-                   })
-               }
+it('Arrays', () => {
+    let printPlanets = (planets) => {
+        planets.forEach(planet => {
+            cy.log(JSON.stringify(planet));
+        })
+    }
 
-               planets = planets.map(planet => {
-                   planet.solarSystem = true;
-                   return planet
-               })
+    planets = planets.map(planet => {
+        planet.solarSystem = true;
+        return planet
+    })
 
-               planets.push({planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false})
+    planets.push({planet: "SomeNewPlanet", radius: 24764, density: 1.64, distance: 30.07, solarSystem: false})
 
-               let initialValue = 0;
-               let sumOfRad = (planets) => {
-                   return planets.reduce((sum, planet) => sum + planet.radius, initialValue)
-               };
+    let initialValue = 0;
+    let sumOfRad = (planets) => {
+        return planets.reduce((sum, planet) => sum + planet.radius, initialValue)
+    };
 
-               cy.log(sumOfRad(planets))
+    cy.log(sumOfRad(planets))
 
-               function getPlanetsWithDistance(planets, number) {
-                   let planetsWithDistanceMoreThenNumber = planets.filter(planet => planet.distance > number)
-                   return planetsWithDistanceMoreThenNumber;
-               }
+    function getPlanetsWithDistance(planets, number) {
+        let planetsWithDistanceMoreThenNumber = planets.filter(planet => planet.distance > number)
+        return planetsWithDistanceMoreThenNumber;
+    }
 
-               cy.log("====Planets with distance > 5 ====")
-               printPlanets(getPlanetsWithDistance(planets, 5))
-               printPlanets(planets)
+    cy.log("====Planets with distance > 5 ====")
+    printPlanets(getPlanetsWithDistance(planets, 5))
+    printPlanets(planets)
 
-               let index = planets.map(function (planet) {
-                   return planet.planet
-               }).indexOf('SomeNewPlanet')
+    let index = planets.map(function (planet) {
+        return planet.planet
+    }).indexOf('SomeNewPlanet')
 
-               cy.log(index)
-               planets.splice(index, 1)
+    cy.log(index)
+    planets.splice(index, 1)
 
-               planets.sort(function (o1, o2) {
-                   return o1.radius - o2.radius
-               })
+    planets.sort(function (o1, o2) {
+        return o1.radius - o2.radius
+    })
 
-               printPlanets(planets)
+    printPlanets(planets)
 
-               planets.sort(function (o1, o2) {
-                   return o1.planet.localeCompare(o2.planet)
-               })
-               cy.log(planets.length)
-           })
+    planets.sort(function (o1, o2) {
+        return o1.planet.localeCompare(o2.planet)
+    })
+    cy.log(planets.length)
+})
 
 
 

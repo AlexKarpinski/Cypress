@@ -3,13 +3,14 @@ let activeUsers = [
     {name: "Петя"},
     {name: "Маша"}
 ];
-     it('Arrays', () => {
-         let weakMap = new WeakMap();
+it('weakMap', () => {
 
-         weakMap.set(activeUsers[0], 1);
-         weakMap.set(activeUsers[1], 2);
-         weakMap.set(activeUsers[2], 3);
+    let weakMap = new WeakMap();
 
-         activeUsers.splice(0, 1);
-         cy.log(weakMap.has(activeUsers[2]))
+    weakMap.set(activeUsers[0], 1);
+    weakMap.set(activeUsers[1], 2);
+    weakMap.set(activeUsers[2], 3);
+
+    activeUsers.splice(0, 1);
+    cy.log(weakMap.has(activeUsers[2]))
 })

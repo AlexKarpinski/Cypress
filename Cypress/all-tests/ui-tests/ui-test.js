@@ -1,5 +1,5 @@
-import  SearchResultsPage from "../../page-objects/searchResultsPage"
-import  AccessoriesPage from "../../page-objects/accessoriesPage"
+import  SearchResultsPage from "../../page-objects/ui-tests/searchResultsPage"
+import  AccessoriesPage from "../../page-objects/ui-tests/accessoriesPage"
 
 /*describe('Test fors] reqres', () => {
     it('Positive', () => {

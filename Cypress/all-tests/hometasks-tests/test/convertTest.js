@@ -8,7 +8,7 @@ describe('Test convert', () => {
     })
 
     it('Positive convert', () => {
-        let currency = chance.pickone(currencyDate.rates);    //
+        let currency = chance.pickone(currencyDate.rates);
         BasePage.open()
         BasePage.searchInput.click().type(currency.shortName + `{enter}`)
         BasePage.searchButton.click({force: true})

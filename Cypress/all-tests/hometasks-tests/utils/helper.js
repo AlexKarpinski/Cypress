@@ -15,7 +15,7 @@ export const union = (setA, setB) => {
     return _union;
 }
 
-export const  intersection = (setA, setB) => {
+export const intersection = (setA, setB) => {
     let _intersection = new Set();
     for (let elem of setB) {
         if (setA.has(elem)) {
