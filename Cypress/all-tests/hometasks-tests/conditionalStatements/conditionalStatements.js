@@ -24,7 +24,6 @@ it('switch', () => {
     let person = {age: chance.age()}
 
     let whoThisPerson = (person) => {
-
         switch (true) {
             case (person.age < 18) :
                 person.type = 'child'
