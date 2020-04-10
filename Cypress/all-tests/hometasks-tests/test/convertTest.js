@@ -1,5 +1,5 @@
-import BasePage from "../../../page-objects/hometasks-tests/basePage"
-import ResultPage from "../../../page-objects/hometasks-tests/resultPage"
+import BasePage from "../../../page-objects/hometasks-tests/convert/basePage"
+import ResultPage from "../../../page-objects/hometasks-tests/convert/resultPage"
 import * as currencyDate from "../../../fixtures/currency"
 import Chance from 'chance'
 
