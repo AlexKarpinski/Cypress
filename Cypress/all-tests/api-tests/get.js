@@ -1,10 +1,12 @@
+const URL = 'https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1571310916';
+
 describe('Get products', () => {
     beforeEach(() => {
 
     })
 
     it('it', () => {
-        cy.request('GET', 'https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1571310916')
+        cy.request('GET', URL)
             .then(response => {
                 let productsArray = response.body.products;
                 cy.log(productsArray.length)
@@ -17,7 +19,7 @@ describe('Get products', () => {
 
 describe('Get products', () => {
     beforeEach(() => {
-        cy.request('GET', 'https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1571310916')
+        cy.request('GET', URL)
             .then((response) => {
                 cy.wrap(response.body.products).as("productsArray");
 
@@ -37,7 +39,7 @@ describe('Get products', () => {
 
 describe('Get products', () => {
     beforeEach(() => {
-        cy.request('GET', 'https://storage.googleapis.com/mannequin/2018/data/productwall/accessories/en_us.json?c=1571310916')
+        cy.request('GET', URL)
             .its('body.products').as('products')
     })
 
