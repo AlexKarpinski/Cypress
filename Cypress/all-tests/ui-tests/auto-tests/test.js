@@ -46,6 +46,8 @@ describe('REQ_01: User is able to add single and multiple color product to the c
             CartPage.getProductCount().should('have.text', '(1 item)')
             CartPage.getProductName().should('contain.text', productData.name)
             CartPage.getProductPrice().should('have.text', productData.price)
+            CartPage.getProductName().should('contain.text', 'White')
+            CartPage.removeCart()
         })
     })
 })
