@@ -1,6 +1,7 @@
 {
   "name": "Stadia Controller",
   "url": "stadia_controller",
-  "color": true,
-  "price": "$69.00"
+  "isColor": true,
+  "price": "$69.00",
+  "color": "White"
 }

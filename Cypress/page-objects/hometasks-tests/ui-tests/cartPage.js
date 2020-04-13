@@ -13,7 +13,8 @@ class CartPage {
     }
 
     removeCart() {
-        return cy.get('.button-text').click()
+        cy.visit('https://store.google.com/us/cart')
+        cy.get('.button-text').click()
     }
 }
 
