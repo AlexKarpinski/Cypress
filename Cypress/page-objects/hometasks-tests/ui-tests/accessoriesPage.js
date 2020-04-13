@@ -1,4 +1,4 @@
-class BasePage {
+class AccessoriesPage {
     open() {
         cy.visit('https://store.google.com/us/collection/accessories_wall?hl=en-US');
     }
@@ -17,4 +17,4 @@ class BasePage {
     }
 }
 
-export default new BasePage()
+export default new AccessoriesPage()

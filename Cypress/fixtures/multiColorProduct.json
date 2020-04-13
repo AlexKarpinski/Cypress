@@ -1,4 +1,6 @@
 {
   "name": "Stadia Controller",
-  "url": "https://store.google.com/us/config/stadia_controller"
+  "url": "stadia_controller",
+  "color": true,
+  "price": "$69.00"
 }
