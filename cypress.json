@@ -5,5 +5,10 @@
   "env": {
     "googleURL": "https://store.google.com/us",
     "petUrl": "https://petstore.swagger.io/v2"
-  }
+  },
+  "responseTimeout":60000,
+  "pageLoadTimeout":100000,
+  "requestTimeout":10000
+
+
 }

@@ -9,7 +9,7 @@ class CartPage {
     }
 
     getProductCount() {
-        return cy.get('.navbar-filler > .visible')
+        return cy.get('.navbar-filler > .visible', {timeout:60000})
     }
 
     removeCart() {

@@ -1,21 +1,19 @@
 class ProductPage {
 
     get searchBuyButtonForSingleColorProduct() {
-        return cy.get('button[class="primary transaction button"]:first');
+        return cy.get('button[class="primary transaction button"]:first', {timeout: 30000});
     }
 
     get searchBuyButtonForMultiColorProduct() {
-        return cy.get('button[class="button primary transaction"]:first');
+        return cy.get('button[class="button primary transaction"]:first', {timeout: 30000});
     }
 
-    addProductToCart(isHasColor) {
-        if(isHasColor!==true) {
-            this.searchBuyButtonForSingleColorProduct.click({force: true})
-        } else if (isHasColor===true) {
+    addProductToCart(product) {
+        if(product.hasOwnProperty('color')) {
             this.searchBuyButtonForMultiColorProduct.click({force: true})
-            cy.get('[role="button"][aria-label=" Clearly White  Is $69.  Add to cart  "]').click()
-        }
+            cy.get(`[role="button"]:contains("${product.color}")`, {timeout:30000}).click()
+        } else this.searchBuyButtonForSingleColorProduct.click({force: true})
+
     }
 }
-
 export default new ProductPage()
