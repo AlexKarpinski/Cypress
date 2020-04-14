@@ -1,4 +1,5 @@
 class AccessoriesPage {
+
     open() {
         cy.visit('https://store.google.com/us/collection/accessories_wall?hl=en-US');
     }
@@ -12,8 +13,8 @@ class AccessoriesPage {
     }
 
     performSearch(productToSearch) {
-            this.searchIcon.click();
-            this.searchInput.type(`${productToSearch}{enter}`);
+        this.searchIcon.click();
+        this.searchInput.type(`${productToSearch}{enter}`);
     }
 }
 
